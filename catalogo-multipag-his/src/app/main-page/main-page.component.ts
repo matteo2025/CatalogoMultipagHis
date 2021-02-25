@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModeratorService } from '../moderator.service';
+import { Prodotto } from '../prodotto';
 
 @Component({
   selector: 'app-main-page',
@@ -9,18 +10,22 @@ import { ModeratorService } from '../moderator.service';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(public mod:ModeratorService, private router:Router) { }
+  constructor(public mod: ModeratorService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  elimina(i:number){}
+  elimina(i: number) { }
 
-  passaPaginaConta(){
+  passaPaginaConta(n:string) {
     this.router.navigateByUrl("/count-page");
   }
 
-  passaPaginaCerca(){
+  passaPaginaCerca(a:string) {
     this.router.navigateByUrl("/search-page");
+  }
+
+  aggiungi(p: Prodotto) {
+    this.mod.lista.push(p);
   }
 }

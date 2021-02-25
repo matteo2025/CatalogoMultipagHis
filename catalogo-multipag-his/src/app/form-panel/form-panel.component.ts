@@ -13,17 +13,21 @@ export class FormPanelComponent implements OnInit {
 
   @Output() contaEvent = new EventEmitter<string>();
   @Output() cercaEvent = new EventEmitter<string>();
+  @Output() aggEvent = new EventEmitter<Prodotto>();
 
-  constructor(public mod:ModeratorService) { }
+  constructor(public mod: ModeratorService) { }
 
   ngOnInit(): void {
   }
 
-  aggiungi() { }
-  conta() { 
+  generaAggEvent() {
+    this.aggEvent.emit(this.prodotto);
+  }
+
+  conta() {
     this.contaEvent.emit("conta passato");
   }
   ricerca() {
     this.cercaEvent.emit("cerca passato");
-   }
+  }
 }
