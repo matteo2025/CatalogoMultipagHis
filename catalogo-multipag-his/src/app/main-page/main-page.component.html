@@ -1,6 +1,6 @@
-<app-form-panel (cercaEvent)="passaPaginaCerca($event)" (contaEvent)="passaPaginaConta($event)" (genereAggEvent)="aggiungi($event)"></app-form-panel>
+<app-form-panel (cercaEvent)="passaPaginaCerca($event)" (contaEvent)="passaPaginaConta($event)" (aggEvent)="aggiungi($event)"></app-form-panel>
 <br>
-<table>
+<table *ngIf="mod.lista.length > 0">
     <tr>
         <th>Codice</th>
         <th>Descrizione</th>

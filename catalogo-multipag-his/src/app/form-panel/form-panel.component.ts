@@ -22,6 +22,8 @@ export class FormPanelComponent implements OnInit {
 
   generaAggEvent() {
     this.aggEvent.emit(this.prodotto);
+    this.prodotto = new Prodotto();
+
   }
 
   conta() {

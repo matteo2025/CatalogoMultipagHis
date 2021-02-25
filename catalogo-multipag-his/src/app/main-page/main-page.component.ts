@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModeratorService } from '../moderator.service';
 import { Prodotto } from '../prodotto';
@@ -15,13 +15,15 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  elimina(i: number) { }
+  elimina(i: number) {
+    this.mod.lista.splice(i, 1);
+  }
 
-  passaPaginaConta(n:string) {
+  passaPaginaConta(n: string) {
     this.router.navigateByUrl("/count-page");
   }
 
-  passaPaginaCerca(a:string) {
+  passaPaginaCerca(a: string) {
     this.router.navigateByUrl("/search-page");
   }
 

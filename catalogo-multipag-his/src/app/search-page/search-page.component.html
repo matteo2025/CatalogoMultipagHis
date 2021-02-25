@@ -3,7 +3,7 @@
 <button (click)="indietro()">Indietro</button>
 <br>
 <br>
-<table>
+<table *ngIf="visList && mod.lista.length > 0">
     <tr>
         <th>Codice</th>
         <th>Descrizione</th>
@@ -14,6 +14,21 @@
         <td>{{p.codice}}</td>
         <td>{{p.descrizione}}</td>
         <td>{{p.prezzo}}</td>
+        <td><button (click)="elimina(i)">Elimina</button></td>
+    </tr>
+</table>
+
+<table *ngIf="visListFiltrata">
+    <tr>
+        <th>Codice</th>
+        <th>Descrizione</th>
+        <th>Prezzo</th>
+        <th>Azioni</th>
+    </tr>
+    <tr *ngFor="let l of listaFiltrata; index as i">
+        <td>{{l.codice}}</td>
+        <td>{{l.descrizione}}</td>
+        <td>{{l.prezzo}}</td>
         <td><button (click)="elimina(i)">Elimina</button></td>
     </tr>
 </table>
