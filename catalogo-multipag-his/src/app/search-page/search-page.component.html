@@ -18,7 +18,9 @@
     </tr>
 </table>
 
-<table *ngIf="visListFiltrata">
+<h3 *ngIf="visMessaggioErrore">{{messaggioErrore}}</h3>
+
+<table *ngIf="visListFiltrata && listaFiltrata.length > 0">
     <tr>
         <th>Codice</th>
         <th>Descrizione</th>
@@ -29,6 +31,6 @@
         <td>{{l.codice}}</td>
         <td>{{l.descrizione}}</td>
         <td>{{l.prezzo}}</td>
-        <td><button (click)="elimina(i)">Elimina</button></td>
+        <td><button (click)="eliminaDopoFilter(l)">Elimina</button></td>
     </tr>
 </table>
