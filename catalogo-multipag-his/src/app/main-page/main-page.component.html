@@ -1,0 +1,16 @@
+<app-form-panel (cercaEvent)="passaPaginaCerca()" (contaEvent)="passaPaginaConta()"></app-form-panel>
+<br>
+<table>
+    <tr>
+        <th>Codice</th>
+        <th>Descrizione</th>
+        <th>Prezzo</th>
+        <th>Azioni</th>
+    </tr>
+    <tr *ngFor="let p of mod.lista; index as i">
+        <td>{{p.codice}}</td>
+        <td>{{p.descrizione}}</td>
+        <td>{{p.prezzo}}</td>
+        <td><button (click)="elimina(i)">Elimina</button></td>
+    </tr>
+</table>
